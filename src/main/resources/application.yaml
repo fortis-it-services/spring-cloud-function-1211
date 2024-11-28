@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    function:
+      definition: "cloudEvents"
+    stream:
+      bindings:
+        cloudEvents-out-0:
+          destination: test
+      kafka:
+        binder:
+          producer-properties:
+            key.serializer: org.apache.kafka.common.serialization.StringSerializer
+  kafka:
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
